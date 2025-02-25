@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+:root {
+  --primary: #F5F5DC;
+  --secondary: #ACC5AA;
+  --accent: #E6B17E;
+  --light-gray: #E8E8E0;
+  --dark-gray: #5D5C5A;
+  --white: #FFFFFF;
+  --light-blue: #C6DAE7;
+  --soft-yellow: #F7E9C8;
+}
+
+@keyframes rainbow-text {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+body {
+  background: var(--secondary);
+  color: var(--dark-gray);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.box {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 20px;
+  background: var(--white);
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  padding: 25px;
+  text-align: center;
+}
+
+#GoosePress {
+  margin-bottom: 15px;
+}
+
+#GoosePress h2 {
+  font-size: 2.5rem;
+  color: var(--accent);
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+#GoosePress h2:hover {
+  color: transparent;
+  background-image: linear-gradient(to right, 
+    #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, 
+    #00ff80, #00ffff, #0080ff, #0000ff, #8000ff, 
+    #ff00ff, #ff0080, #ff0000);
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: rainbow-text 6s linear infinite;
+}
+
+#GoosePress h2::before {
+  content: "🦢";
+  margin-right: 10px;
+}
+
+#tagline {
+  font-size: 1.2rem;
+  color: var(--dark-gray);
+  margin: 15px auto 30px;
+  max-width: 600px;
+  text-align: center;
+}
+
+.getitems {
+  background-color: var(--primary);
+  padding: 30px;
+  border-radius: 15px;
+  margin: 30px auto;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#getimage, #getpdf {
+  background: var(--white);
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+#getimage:hover, #getpdf:hover {
+  transform: translateY(-5px);
+}
+
+#getimage p, #getpdf p {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: var(--dark-gray);
+  font-weight: bold;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.file-upload-label {
+  background-color: var(--accent);
+  color: var(--white);
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.file-upload-label:hover {
+  background-color: #d9a473;
+}
+
+.file-upload-label::before {
+  content: "📁";
+  margin-right: 8px;
+}
+
+#getpdf {
+  border: 2px dashed var(--light-blue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#getpdf p {
+  margin-bottom: 15px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  color: var(--dark-gray);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  .box {
+    padding: 15px;
+  }
+  
+  #GoosePress h2 {
+    font-size: 2rem;
+  }
+  
+  .getitems {
+    padding: 20px;
+  }
+}
